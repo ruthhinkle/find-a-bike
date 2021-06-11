@@ -1,3 +1,12 @@
+// CUSTOMIZE YOUR LOCATION
+
+// EDIT VARIABLES: For your city, find the JSON formatted urls of "station_information" and "station_status". 
+// The placeholder urls are for Chicago's bikeshare program, Divvy.
+var url_station_info = "https://gbfs.divvybikes.com/gbfs/en/station_information.json"
+var url_station_status = "https://gbfs.divvybikes.com/gbfs/en/station_status.json"
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 // SET UP: CREATE MAP, LAYERS, OVERLAYS, LAYER CONTROL, LEGEND CLASS, AND OBJECTS TO CONTAIN ICONS
 
 // Create the tile layer that will be the background of our map.
@@ -15,6 +24,7 @@ var layers = {
 };
 
 // Create the map with our layers.
+// NOTE: The "center" of this map is Chicago. Edit for your city.
 var map = L.map("map-id", {
   center: [41.88, -87.62],
   zoom: 11,
@@ -76,6 +86,8 @@ var icons = {
     shape: "circle"
   })
 };
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // CREATE FUNCTIONS TO CALL ON TOGGLE BUTTONS
 
@@ -250,6 +262,7 @@ function fillStations(stationStatus, stationInfo, updatedAt, bikeEbikes) {
 
 }
 
+// Function to add ant-paths
 function addAntPaths() {
   let antPolyline1 = L.polyline.antPath(lineOne, {
     color: "red",
@@ -313,15 +326,7 @@ function addAntPaths() {
 }
 
 
-// CODE FOR E-BIKE TOGGLE BUTTON
-// // Initialize all the LayerGroups that we'll use.
-// var layers = {
-//   EMPTY: new L.LayerGroup(),
-//   LOW: new L.LayerGroup(),
-//   NORMAL: new L.LayerGroup(),
-// };
-
-//Landmarks toggling
+// Function to toggle landmarks
 function addLandmarks() {
   var landmarkIcon = L.Icon.extend({
     options: {
@@ -349,8 +354,8 @@ function addLandmarks() {
   navypierIcon = new landmarkIcon({ iconUrl: 'static/img/whiteIcon_navypier.png' });
   zooIcon = new landmarkIcon({ iconUrl: 'static/img/whiteIcon_zoo.png' });
 
-  // ("<h5>" + station.name + "</h5>" + "<h6><br> Capacity: " + station.capacity + "<br>" + num_classic_bikes_available + " Classic Bikes Available </h6>");
-  //"<h5>" + "The Art Institute of Chicago" + "</h5>" + "<br>" + "<h6>" + "Founded in 1879 as a museum and school of the arts."+"</h6>"
+  // Popup formatting sample for landmarks
+  // .bindPopup("<h5>" + 'The Art Institute of Chicago' + "</h5>" + "<br>" + "<h6>" + "Founded in 1879 as a museum and school of the arts."+"</h6>");
 
   L.marker([41.8796, -87.6237], { icon: instituteIcon }).addTo(layers.LANDMARKS).bindPopup("<h5>" + 'The Art Institute of Chicago' + "</h5>" + "<br>" + "<h6>" + "Founded in 1879 as a museum and school of the arts."+"</h6>");
   L.marker([41.8759, -87.6189], { icon: fountainIcon }).addTo(layers.LANDMARKS).bindPopup("<h5>" + "Buckingham Fountain"+ "</h5>" + "<br>" + "<h6>" + "One of the largest fountains worldwide, meant to represent nearby Lake Michigan."+"</h6>");
@@ -370,14 +375,16 @@ function addLandmarks() {
 
 }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 // CODE FOR INDEX.HTML AND "ALL BIKES" TOGGLE BUTTON
 
 // Perform an API call to the Divvy Bike station information endpoint.
-d3.json("https://gbfs.divvybikes.com/gbfs/en/station_information.json").then(function (infoRes) {
+d3.json(url_station_info).then(function (infoRes) {
 
 
   // When the first API call completes, perform another call to the Divvy Bike station status endpoint.
-  d3.json("https://gbfs.divvybikes.com/gbfs/en/station_status.json").then(function (statusRes) {
+  d3.json(url_station_status).then(function (statusRes) {
     var updatedAt = infoRes.last_updated;
     var stationStatus = statusRes.data.stations;
     var stationInfo = infoRes.data.stations;
@@ -408,9 +415,9 @@ function bikeeToggle(bikeType) {
   // var ebikelayer = new L.LayerGroup()
 
   //create empty layers group
-  d3.json("https://gbfs.divvybikes.com/gbfs/en/station_information.json").then(function (infoRes) {
+  d3.json(url_station_info).then(function (infoRes) {
 
-    d3.json("https://gbfs.divvybikes.com/gbfs/en/station_status.json").then(function (statusRes) {
+    d3.json(url_station_status).then(function (statusRes) {
       var updatedAt = infoRes.last_updated;
       var stationStatus = statusRes.data.stations;
       var stationInfo = infoRes.data.stations;
@@ -439,9 +446,9 @@ function bikecToggle(bikeType) {
   var classicbikelayer = new L.LayerGroup()
 
   //create empty layers group
-  d3.json("https://gbfs.divvybikes.com/gbfs/en/station_information.json").then(function (infoRes) {
+  d3.json(url_station_info).then(function (infoRes) {
 
-    d3.json("https://gbfs.divvybikes.com/gbfs/en/station_status.json").then(function (statusRes) {
+    d3.json(url_station_status).then(function (statusRes) {
       var updatedAt = infoRes.last_updated;
       var stationStatus = statusRes.data.stations;
       var stationInfo = infoRes.data.stations;
@@ -450,22 +457,6 @@ function bikecToggle(bikeType) {
 
       addAntPaths()
       addLandmarks()
-
-    //   L.marker([41.8796, -87.6237], { icon: instituteIcon }).addTo(map).bindPopup("The Art Institute");
-    //   L.marker([41.8759, -87.6189], { icon: fountainIcon }).addTo(map).bindPopup("Buckingham Fountain");
-    //   L.marker([41.8855, -87.6274], { icon: theaterIcon }).addTo(map).bindPopup("Chicago Theater");
-    //   L.marker([41.9486, -87.6553], { icon: baseballIcon }).addTo(map).bindPopup("Wrigley Field");
-    //   L.marker([41.8301, -87.6337], { icon: baseballIcon }).addTo(map).bindPopup("Guaranteed Rate Field");
-    //   L.marker([41.8808, -87.6742], { icon: basketballIcon }).addTo(map).bindPopup("United Center");
-    //   L.marker([41.8527, -87.6320], { icon: chinatownIcon }).addTo(map).bindPopup("China Town");
-    //   L.marker([41.8828, -87.6233], { icon: cloudgateIcon }).addTo(map).bindPopup("Cloud Gate (a.k.a. 'The Bean')");
-    //   L.marker([41.8864, -87.7172], { icon: conservatoryIcon }).addTo(map).bindPopup("Garfield Park Conservatory");
-    //   L.marker([41.8780, -87.6315], { icon: downtownIcon }).addTo(map).bindPopup("The Loop");
-    //   L.marker([41.8627, -87.6166], { icon: footballIcon }).addTo(map).bindPopup("Soldier Field");
-    //   L.marker([41.8881, -87.6290], { icon: marinaIcon }).addTo(map).bindPopup("Marina City");
-    //   L.marker([41.9220, -87.6645], { icon: pequodsIcon }).addTo(map).bindPopup("Pequods Pizza");
-    //   L.marker([41.8919, -87.6100], { icon: navypierIcon }).addTo(map).bindPopup("Navy Pier");
-    //   L.marker([41.9217, -87.6336], { icon: zooIcon }).addTo(map).bindPopup("Lincoln Park Zoo");
     });
   })
 };
