@@ -1,4 +1,6 @@
-# Plan Your Divvy Trip
+# Plan a Bike Trip
+
+# EDIT OUT ALL DIVVY
 
 See Chicago up close when you bike around the city. Use the [website](https://ruthhinkle.github.io/project-2/index.html) to find a bike station close to you or your destination, check the station's capacity to find available bikes, and bike to the nearest landmark. 
 
