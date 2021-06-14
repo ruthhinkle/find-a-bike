@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title> Plan Your Divvy Trip</title>
+    <title>Find a Bike</title>
 
     <link rel="icon" href="static/img/divvy_flavicon.svg" type="image/icon type">
    
@@ -21,14 +21,16 @@
         </button>
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="table.html">Table</a>
-            </ul>
-        </div>
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="table.html">Table</a></li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a></li>
+          </ul>
+      </div>
     </nav>  
     <!-- D3 Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"
@@ -80,12 +82,14 @@
         <div class="row">
           <div class="col-12">
 
-              <a><p><h3 style="text-align: center; margin-top: 100px;">Plan Your Divvy Trip</h3></p></a>
-              <a><p class="text-center">Click an area to find a station near you or your destination.</p><p class="text-center">Prefer electric bikes over classic models? <strong>Pick your bike type</strong> using the buttons above the map. <br>View <strong>Chicago landmarks</strong> and the <strong>10 most popular routes</strong> by choosing layers in the right corner of the map.</p> </a><br>
+              <a><p><h3 style="text-align: center; margin-top: 100px;">Find a Bike</h3></p></a>
+              <a><p class="text-center">Click an area to find a station near you or your destination.</p><p class="text-center">Prefer electric bikes over classic models? <strong>Pick your bike type</strong> using the buttons above the map. </a><br>
               <!-- <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p> -->
 
           </div>
         </div>
+
+        <!-- Buttons for Different Bike Types -->
         <div class="btn-group" onclick="bikeeToggle(this.value)" role="group" aria-label="Basic outlined example">
             <button type="button" value="ebikes" class="btn btn-outline-primary">Electric Bikes</button>
           </div>
