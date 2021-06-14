@@ -1,0 +1,5 @@
+﻿city_name,station_info_link,station_status_link
+"Washington, DC",https://gbfs.capitalbikeshare.com/gbfs/en/station_information.json,https://gbfs.capitalbikeshare.com/gbfs/en/station_status.json
+"Boston, MA",https://gbfs.bluebikes.com/gbfs/en/station_information.json,https://gbfs.bluebikes.com/gbfs/en/station_status.json
+"Portland, OR",https://gbfs.biketownpdx.com/gbfs/en/station_information.json,https://gbfs.biketownpdx.com/gbfs/en/station_status.json
+"Chicago, IL",https://gbfs.divvybikes.com/gbfs/en/station_information.json,https://gbfs.divvybikes.com/gbfs/en/station_status.json

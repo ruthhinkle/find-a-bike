@@ -11,12 +11,14 @@
 // CENTER: [45.5, -122.67]
 
 // Blue Bikes Boston
-// var url_station_info = "https://gbfs.bluebikes.com/gbfs/en/station_information.json"
-// var url_station_status = "https://gbfs.bluebikes.com/gbfs/en/station_status.json"
+var url_station_info = "https://gbfs.bluebikes.com/gbfs/en/station_information.json"
+var url_station_status = "https://gbfs.bluebikes.com/gbfs/en/station_status.json"
 
 // DC Capital Bikeshare
 // var url_station_info = "https://gbfs.capitalbikeshare.com/gbfs/en/station_information.json"
 // var url_station_status ="https://gbfs.capitalbikeshare.com/gbfs/en/station_status.json"
+
+// CREATE A FUNCTION TO POPULATE CITY DATA
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
