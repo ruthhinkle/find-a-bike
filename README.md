@@ -1,8 +1,10 @@
 # Plan a Bike Trip
 
-# EDIT OUT ALL DIVVY
+# Project Objective
+Public bikeshare programs are becoming more com
 
-See Chicago up close when you bike around the city. Use the [website](https://ruthhinkle.github.io/project-2/index.html) to find a bike station close to you or your destination, check the station's capacity to find available bikes, and bike to the nearest landmark. 
+This project is my solo adaption of a previous collaboration, [Find a Divvy Bike](https://ruthhinkle.github.io/project-2/index.html). Like the original project, this adaption allows users tap into a city's bikeshare program and locate a bike for their use. 
+
 
 If you like to plan ahead, pick out a landmark or two and find the closest stations by looking at the map. 
 
