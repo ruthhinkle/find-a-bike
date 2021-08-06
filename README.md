@@ -1,26 +1,13 @@
 # Plan a Bike Trip
 
-# Project Objective
-Public bikeshare programs are becoming more com
-
+## Project Description
 This project is my solo adaption of a previous collaboration, [Find a Divvy Bike](https://ruthhinkle.github.io/project-2/index.html). Like the original project, this adaption allows users tap into a city's bikeshare program and locate a bike for their use. 
 
-
-If you like to plan ahead, pick out a landmark or two and find the closest stations by looking at the map. 
-
-## How to Use
+## Objectives
 Go to [our website](https://ruthhinkle.github.io/project-2/index.html) to plan your trip.
 
-<details> <summary markdown="span"><strong> 📍 Check Nearby Stations</strong></summary>
+<details> <summary markdown="span"><strong> 📍 Check Station Status</strong></summary>
   To find a bike, check nearby stations and look at their status to see if there are bikes available. Light-blue pins indicate  stations full of bikes, dark-blue pins indicate stations with less than 5 bikes, and red pins indicate empty stations. When you're done with your ride, red stations are great place to drop off your bike.
-</details>
-
-<details> <summary markdown="span"><strong> 🗽 Visit Popular Landmarks</strong></summary>
-    To add popular Chicago landmarks to the map, select the "Landmarks" layer view in the top right corner of the map. Zoom in to see nearby stations for bike pick-up or drop-off. You can click on Landmark pins to see their names.
-</details>
-
-<details> <summary markdown="span"><strong> 🚲 Follow Popular Routes</strong></summary>
-    To add popular Chicago landmarks to the map, select the "Landmarks" layer view in the top right corner of the map. Zoom in to see nearby stations for bike pick-up or drop-off. You can click on Landmark pins to see their names.
 </details>
 
 <details> <summary markdown="span"><strong>🔎 Table View</strong></summary>
@@ -29,26 +16,20 @@ Go to [our website](https://ruthhinkle.github.io/project-2/index.html) to plan y
 
 
 ## Future Upgrades
-* Add information about each destination when you click on the icon. 
 * Reconcile the conflict between MarkerClusterGroups and layer toggles for Full, Low, and Empty stations
 * Design a neutral template to be used with GBFS data from any other city following that data standard
-
-## 📁 Installation
-<strong>To plan a Chicago Divvy trip</strong>, use [our website](https://ruthhinkle.github.io/project-2/index.html).
 
 <strong>To run on your local machine, clone this repository.</strong> No extra installation is necessary.
 
 If you do run into issues, check the installation and file requirements for the following libraries: 
 * [Leaflet](https://leafletjs.com/)
 * [Leaflet MarkerCluster](https://github.com/Leaflet/Leaflet.markercluster) by [Leaflet](https://github.com/Leaflet)
-* [Leaflet Ant-Path](https://github.com/rubenspgcavalcante/leaflet-ant-path) by [Rubens Pinheiro](https://github.com/rubenspgcavalcante)
 
 If you can't reconcile installation issues, let us know!  
 
+## Thanks to my original collaborators!
+* [Andrew Neher](https://github.com/andrewneher)
+* [Charlie Denys](https://github.com/CMDenys)
+* [Drew McBride](https://github.com/drewmcbride)
+* [Nabila Farooqi](https://github.com/nfarooqi92)
 
-## 💻 Contributors:
-* Andrew Neher - Project Manager, Designer, Landmark Lead
-* Charlie Denys - Front End, Ant-Path Lead
-* Drew McBride - Backend, Table View Lead
-* Nabila Farooqi - Dev Ops, Deployment, Bike Type Lead
-* Ruth Hinkle - Github Master, Documentation, Cluster/Layers Lead
